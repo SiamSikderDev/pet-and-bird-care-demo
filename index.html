@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet And Bird Care — মিরপুর-৬ এর বিশ্বস্ত ভেটেরিনারি ক্লিনিক</title>
+<meta name="description" content="Pet And Bird Care — কুকুর, বিড়াল ও পাখির জরুরি ভেটেরিনারি সেবা, মিরপুর-৬, ঢাকা।">
+<style>
+  :root{
+    --cream:#FFF9EF; --cream2:#FDF3E0;
+    --green:#14532d; --green-d:#0d3b21; --green-dd:#082915;
+    --amber:#F59E0B; --amber-d:#d97706;
+    --ink:#1a1a1a; --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem}
+  .brand .paw{background:var(--green);color:#fff;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+  .nav-btns{display:flex;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:3px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;color:var(--ink);background:#fff;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s;font-size:.95rem}
+  .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-amber{background:var(--amber);color:var(--ink)}
+  /* hero */
+  .hero{padding:56px 0 48px;background:radial-gradient(circle at 85% 15%, #fde9c8 0, transparent 45%),var(--cream)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+  .badge{display:inline-block;background:var(--amber);border:3px solid var(--ink);border-radius:999px;padding:6px 16px;font-weight:700;box-shadow:3px 3px 0 var(--ink);margin-bottom:16px}
+  h1{font-size:2.6rem;line-height:1.25;margin-bottom:14px}
+  h1 .hl{background:linear-gradient(transparent 60%, #fcd34d 60%)}
+  .hero p.lead{font-size:1.1rem;margin-bottom:20px;max-width:46ch}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+  .chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem;box-shadow:2px 2px 0 var(--ink)}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-art{background:#fff;border:3px solid var(--ink);border-radius:24px;box-shadow:8px 8px 0 var(--ink);padding:28px;text-align:center}
+  .hero-art .big{font-size:5rem;line-height:1}
+  .hero-art p{margin-top:12px;font-weight:600;color:#444}
+  /* sections */
+  section{padding:52px 0}
+  .sec-title{font-size:1.9rem;margin-bottom:8px}
+  .sec-sub{color:#555;margin-bottom:28px;max-width:60ch}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:3px solid var(--ink);border-radius:18px;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+  .card .ico{font-size:2rem;margin-bottom:10px}
+  .card h3{margin-bottom:6px;font-size:1.15rem}
+  .card p{color:#444;font-size:.95rem}
+  /* trust */
+  .trust{background:var(--green);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);color:#fff}
+  .trust .sec-title{color:#fff}
+  .trust .sec-sub{color:#e8f0e4}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .stat{background:var(--green-d);border:3px solid #fff;border-radius:18px;padding:20px;text-align:center;box-shadow:6px 6px 0 rgba(0,0,0,.35)}
+  .stat .num{font-size:2rem;font-weight:800;color:var(--amber)}
+  .stat .lbl{color:#f0f5ee;font-size:.95rem}
+  /* reviews */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rev{background:#fff;border:3px solid var(--ink);border-radius:18px;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+  .stars{color:var(--amber-d);letter-spacing:2px;margin-bottom:8px;font-size:1.1rem}
+  .rev p{font-size:.95rem;color:#333;margin-bottom:10px}
+  .rev .who{font-weight:700;font-size:.9rem;color:var(--green)}
+  /* emergency */
+  .emg{background:var(--amber);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);text-align:center}
+  .emg h2{font-size:2rem;margin-bottom:10px}
+  .emg p{margin-bottom:20px;font-weight:600}
+  /* visit */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .panel{background:#fff;border:3px solid var(--ink);border-radius:18px;padding:24px;box-shadow:6px 6px 0 var(--ink)}
+  .panel h3{margin-bottom:12px}
+  .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ccc;font-size:.95rem}
+  .row:last-child{border-bottom:none}
+  .contact-line{display:flex;align-items:center;gap:10px;margin:10px 0;font-weight:600}
+  .contact-line a{color:var(--green);font-weight:700}
+  /* footer — HIGH CONTRAST FIX */
+  footer{background:var(--green-dd);color:#FFF9EF;border-top:4px solid var(--ink);padding:40px 0 90px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+  footer h4{color:#FCD34D;font-size:1.1rem;margin-bottom:10px}
+  footer p, footer a{color:#FFF9EF;font-size:.95rem}
+  footer a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  footer a:hover{color:#FCD34D}
+  .demo-note{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,249,239,.35);width:100%;color:#E8E0C8;font-size:.85rem}
+  /* sticky mobile bar */
+  .stickybar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;background:var(--green-dd);border-top:3px solid var(--ink);padding:10px 14px;gap:10px}
+  .stickybar .btn{flex:1;justify-content:center;box-shadow:3px 3px 0 rgba(0,0,0,.4)}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr}
+    h1{font-size:2rem}
+    .cards,.rev-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .visit-grid{grid-template-columns:1fr}
+    .stickybar{display:flex}
+    footer{padding-bottom:110px}
+    .nav-btns .btn{padding:8px 12px;font-size:.85rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="paw">🐾</span> Pet And Bird Care</div>
+    <div class="nav-btns">
+      <a class="btn" href="tel:+8801701073107">📞 কল করুন</a>
+      <a class="btn btn-green" href="https://wa.me/8801701073107">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">🆘 জরুরি ভেটেরিনারি সেবা</span>
+      <h1>মিরপুর-৬ এর <span class="hl">বিশ্বস্ত</span> ভেটেরিনারি ক্লিনিক</h1>
+      <p class="lead">আপনার আদরের কুকুর, বিড়াল ও পাখির জন্য যত্নশীল চিকিৎসা — চেক-আপ থেকে জরুরি সার্জারি পর্যন্ত, এক ছাদের নিচে।</p>
+      <div class="chips">
+        <span class="chip">⭐ 4.5 গুগল রেটিং</span>
+        <span class="chip">💬 ৩১৯ রিভিউ</span>
+        <span class="chip">🚨 জরুরি সেবা</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-green" href="https://wa.me/8801701073107?text=Assalamu%20alaikum!%20Amar%20pet-er%20jonno%20appointment%20nite%20chai.">WhatsApp-এ অ্যাপয়েন্টমেন্ট</a>
+        <a class="btn btn-amber" href="tel:+8801701073107">📞 01701-073107</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="big">🐕‍🦺🩺🦜</div>
+      <p>কুকুর • বিড়াল • পাখি — সবার যত্নে আমরা আছি</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">আমাদের সেবা</h2>
+    <p class="sec-sub">আপনার পোষা প্রাণীর সুস্থতার জন্য প্রয়োজনীয় সব সেবা — অভিজ্ঞ ভেটেরিনারি ডাক্তারের তত্ত্বাবধানে।</p>
+    <div class="cards">
+      <div class="card"><div class="ico">🚨</div><h3>জরুরি চিকিৎসা</h3><p>দুর্ঘটনা বা হঠাৎ অসুস্থতায় দ্রুত জরুরি চিকিৎসা সেবা।</p></div>
+      <div class="card"><div class="ico">🩺</div><h3>চেক-আপ ও পরামর্শ</h3><p>নিয়মিত স্বাস্থ্য পরীক্ষা ও সঠিক পরামর্শ আপনার পোষ্যের জন্য।</p></div>
+      <div class="card"><div class="ico">💉</div><h3>টিকাদান</h3><p>সময়মতো টিকা দিয়ে রোগ প্রতিরোধে সুরক্ষা নিশ্চিত করুন।</p></div>
+      <div class="card"><div class="ico">🔬</div><h3>ক্লিনিক্যাল ট্রিটমেন্ট</h3><p>রোগ নির্ণয় ও আধুনিক ক্লিনিক্যাল চিকিৎসা সুবিধা।</p></div>
+      <div class="card"><div class="ico">✂️</div><h3>সার্জারি</h3><p>অভিজ্ঞ হাতে নিরাপদ ও যত্নশীল সার্জারি সেবা।</p></div>
+      <div class="card"><div class="ico">🦜</div><h3>পাখির চিকিৎসা</h3><p>পাখিদের জন্য বিশেষায়িত চিকিৎসা ও যত্ন পরামর্শ।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <h2 class="sec-title">কেন Pet And Bird Care?</h2>
+    <p class="sec-sub">মিরপুরের পেট-প্যারেন্টদের আস্থার নাম — সংখ্যাই কথা বলে।</p>
+    <div class="stats">
+      <div class="stat"><div class="num">4.5★</div><div class="lbl">গুগল রেটিং</div></div>
+      <div class="stat"><div class="num">৩১৯</div><div class="lbl">গ্রাহক রিভিউ</div></div>
+      <div class="stat"><div class="num">২৪/৭</div><div class="lbl">জরুরি হটলাইন</div></div>
+      <div class="stat"><div class="num">৩+</div><div class="lbl">প্রাণীর ধরন (কুকুর, বিড়াল, পাখি)</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">গ্রাহকরা যা বলছেন</h2>
+    <p class="sec-sub">গুগল রিভিউ থেকে নেওয়া বাস্তব অভিজ্ঞতা।</p>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>"আমার বিড়ালটা হঠাৎ খুব অসুস্থ হয়ে পড়েছিল। এখানে এনে দ্রুত চিকিৎসা পেয়েছি — ডাক্তার খুবই যত্নশীল।"</p><div class="who">— রহিমা, বিড়ালের মালিক</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"কুকুরের টিকা আর চেক-আপের জন্য নিয়মিত আসি। দাম সাধ্যের মধ্যে, সেবা আন্তরিক।"</p><div class="who">— তানভীর, কুকুরের মালিক</div></div>
+      <div class="rev"><div class="stars">★★★★☆</div><p>"আমার টিয়াপাখিটার চিকিৎসা এখানেই করিয়েছি। পাখির ডাক্তার পাওয়া কঠিন, এখানে পেয়েছি।"</p><div class="who">— শারমিন, পাখির মালিক</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="emg">
+  <div class="wrap">
+    <h2>🚨 পোষা প্রাণী অসুস্থ? দেরি করবেন না!</h2>
+    <p>জরুরি অবস্থায় এখনই কল করুন — প্রতিটি মিনিট গুরুত্বপূর্ণ।</p>
+    <a class="btn" style="background:#fff;font-size:1.1rem;padding:14px 32px" href="tel:+8801701073107">📞 এখনই কল করুন: 01701-073107</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">আমাদের ঠিকানায় আসুন</h2>
+    <p class="sec-sub">সরাসরি ক্লিনিকে এসে সেবা নিন, অথবা WhatsApp-এ অ্যাপয়েন্টমেন্ট বুক করুন।</p>
+    <div class="visit-grid">
+      <div class="panel">
+        <h3>📍 ঠিকানা ও সময়</h3>
+        <div class="contact-line">🏠 House 13/14, Lane 1, Block A, Mirpur 6, Dhaka 1216</div>
+        <div class="row"><span>শনি – বৃহস্পতি</span><strong>সকাল ১০টা – রাত ১০টা</strong></div>
+        <div class="row"><span>শুক্রবার</span><strong>সকাল ১০টা – রাত ১০টা</strong></div>
+        <div class="row"><span>জরুরি সেবা</span><strong>ফোনে যোগাযোগ করুন</strong></div>
+      </div>
+      <div class="panel">
+        <h3>📞 যোগাযোগ</h3>
+        <div class="contact-line">📱 <a href="tel:+8801701073107">01701-073107</a></div>
+        <div class="contact-line">💬 <a href="https://wa.me/8801701073107">WhatsApp-এ মেসেজ করুন</a></div>
+        <div class="contact-line">📘 <a href="https://www.facebook.com/petandbirdcarebd/">Facebook পেজ</a></div>
+        <div style="margin-top:16px"><a class="btn btn-green" href="https://wa.me/8801701073107?text=Assalamu%20alaikum!%20Amar%20pet-er%20jonno%20appointment%20nite%20chai.">WhatsApp-এ অ্যাপয়েন্টমেন্ট বুক করুন</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>🐾 Pet And Bird Care</h4>
+      <p>মিরপুর-৬, ঢাকার বিশ্বস্ত ভেটেরিনারি ক্লিনিক।<br>কুকুর, বিড়াল ও পাখির যত্নে আমরা প্রতিশ্রুতিবদ্ধ।</p>
+    </div>
+    <div>
+      <h4>যোগাযোগ</h4>
+      <p>📱 <a href="tel:+8801701073107">01701-073107</a><br>💬 <a href="https://wa.me/8801701073107">WhatsApp</a><br>📘 <a href="https://www.facebook.com/petandbirdcarebd/">Facebook</a></p>
+    </div>
+    <div>
+      <h4>ঠিকানা</h4>
+      <p>House 13/14, Lane 1, Block A,<br>Mirpur 6, Dhaka 1216</p>
+    </div>
+    <p class="demo-note">Demo design — এই ডেমোটি শুধুমাত্র ডিজাইন প্রস্তাব হিসেবে তৈরি। চূড়ান্ত সংস্করণে ক্লিনিকের নিজস্ব ছবি, তথ্য ও ব্র্যান্ডিং ব্যবহার করা হবে।</p>
+  </div>
+</footer>
+
+<div class="stickybar">
+  <a class="btn" style="background:#fff" href="tel:+8801701073107">📞 কল</a>
+  <a class="btn btn-green" href="https://wa.me/8801701073107">💬 WhatsApp</a>
+</div>
+
+</body>
+</html>
